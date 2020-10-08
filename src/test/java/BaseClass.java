@@ -1,4 +1,6 @@
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import drivers.CustomWebDriver;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +19,7 @@ public class BaseClass {
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .savePageSource(true)
                 .screenshots(true));
-
+        Configuration.browser = CustomWebDriver.class.getName();
         step("Open Site AlfaBank", () -> {
             open("https://alfabank.ru/");
         });
@@ -28,6 +30,7 @@ public class BaseClass {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
+        attachVideo();
         closeWebDriver();
     }
 }
