@@ -10,7 +10,7 @@ public class DriverHelper {
     public static void configureSelenide() { // настраиваем браузер
         Configuration.holdBrowserOpen = false;
         Configuration.timeout = 11000;
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.browser = "chrome";
     }
 
