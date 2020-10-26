@@ -11,16 +11,12 @@ repositories {
 }
 
 allure {
-    autoconfigure = true // плагин все автоматически сконфигурирует
+    autoconfigure = true
     version = '2.13.5'
 
     useJUnit5(){
         version = '2.13.5'
     }
-}
-
-test {
-    useJUnitPlatform()
 }
 
 tasks.withType(JavaCompile) {
@@ -49,6 +45,10 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task alfaTest(type: Test) {

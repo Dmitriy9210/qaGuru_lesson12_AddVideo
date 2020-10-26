@@ -1,4 +1,4 @@
-# TestsAlfaBank
+# tests.TestsAlfaBank
 Проект реализован на selenid + junit5 + allure
 
 Тестирование хедера главной страницы "https://alfabank.ru/"
