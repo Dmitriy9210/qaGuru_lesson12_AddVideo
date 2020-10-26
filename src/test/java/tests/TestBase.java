@@ -14,7 +14,7 @@ import static helpers.DriverHelper.getConsoleLogs;
 
 public class TestBase {
     @BeforeAll
-    void setUp() {
+    static void setUp() {
         configureSelenide();
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .savePageSource(true)
